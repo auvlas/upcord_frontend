@@ -1,0 +1,19 @@
+div.sign-buttons button + button {
+    margin-left: 8px;
+}
+
+div.sign-buttons > button {
+    background-color: #520246;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+div.sign-buttons {
+    display: flex;
+    width: max-content;
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: 8px;
+}

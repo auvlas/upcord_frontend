@@ -1,45 +1,63 @@
-import { useState, Fragment } from "react"
-import SignIn from "./SignIn"
-import SignUp from "./SignUp"
+import { useState, JSX } from 'react';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
-import "./Authorization.css"
+import './Authorization.css';
 
 
-function Authorization({ ok }: { ok: () => void }) {
-    const [CurrentForm, setCurrentForm] = useState<React.ComponentType<any>>(() => SignIn)
+type FormType = typeof SignIn | typeof SignUp
 
-    const clickSingIn = () => {
+function Authorization({ ok }: () => void): JSX.Element {
+
+    const [CurrentForm, setCurrentForm]: [
+        FormType, 
+        React.Dispatch<React.SetStateAction<FormType>>
+    ] = useState<FormType>(SignIn);
+
+    const clickSignIn = (): void => {
         if (CurrentForm !== SignIn) {
-            setCurrentForm(() => SignIn);
+            setCurrentForm(SignIn);
         }
     }
 
-    const clickSingUp = () => {
+    const clickSignUp = (): void => {
         if (CurrentForm !== SignUp) {
-            setCurrentForm(() => SignUp);
+            setCurrentForm(SignUp)
         }
     }
 
-    const activeClass: string = (() => {
+    const [activeSignIn, activeSignUp]: [string, string]
+            = ((): [string, string] => {
         switch (CurrentForm) {
             case SignIn:
-                return "signin"
+                return ["active", ""];
             case SignUp:
-                return "signup"
+                return ["", "active"];
+            default:
+                return ["", ""];
         }
-        return ""
-    }) ()
+    })();
 
     return (
         <>
-            <div className={`sign-buttons ${activeClass}`}>
-                <button onClick={clickSingIn}>Sing In</button>
-                <button onClick={clickSingUp}>Sing Up</button>
-            </div>
+            <div>
+                <button 
+                        className={`sign signin ${activeSignIn}`} 
+                        onClick={clickSignIn}
+                >
+                    Sign In
+                </button>
 
-            <CurrentForm ok={ok} />
+                <button 
+                        className={`sign signup ${activeSignUp}`} 
+                        onClick={clickSignUp}
+                >
+                    Sign Up
+                </button>
+            </div>
+            {CurrentForm && <CurrentForm ok={ok} />}
         </>
-    )
+    );
 }
 
-export default Authorization
+export default Authorization;

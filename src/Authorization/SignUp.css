@@ -13,7 +13,7 @@ form.signup-form {
     margin: auto;
     padding: 24px;
     color: white;
-    background-color: #520246;
+    background-color: #17a08772;
     flex-shrink: 0;
 }
 
@@ -34,7 +34,7 @@ form.signup-form > label > input {
     font-size: 15px;
     border: 0px;
     border-radius: 6px;
-    background-color: #340252;
+    background-color: #3d0b5a;
     color: white;
     outline: none;
 }

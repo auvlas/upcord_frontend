@@ -1,5 +1,17 @@
 html {
-    background-color: #340252;
+    background-color: #11011a;
+    background-image: linear-gradient(rgba(14, 14, 16, 0.6), rgba(14, 14, 16, 0.6)), 
+                    url('https://img.magnific.com/premium-vector/starry-sky-with-milky-way-vector-simple-3d-smooth-isolated-illustration_1067050-365.jpg?semt=ais_hybrid') !important;
+                    background-size: cover !important;       /* Растягивает фото по размеру окна */
+  background-position: center !important;   /* Центрирует луну */
+  background-repeat: no-repeat !important;  /* Запрещает картинке размножаться */
+  background-attachment: fixed !important;  /* Фиксирует фон при скролле */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 html, body {

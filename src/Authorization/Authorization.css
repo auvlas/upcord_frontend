@@ -3,7 +3,7 @@ div.sign-buttons button + button {
 }
 
 div.sign-buttons > button {
-    background-color: #520246;
+    background-color: #148f70;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -11,9 +11,10 @@ div.sign-buttons > button {
 }
 
 div.sign-buttons {
-    display: flex;
-    width: max-content;
-    margin-left: auto;
-    margin-right: 8px;
-    margin-top: 8px;
+  position: fixed !important;   /* Жестко привязывает блок к экрану */
+  top: 20px !important;         /* Отступ 20 пикселей сверху */
+  right: 20px !important;       /* Отступ 20 пикселей справа */
+  display: flex !important;     /* Выстраивает кнопки в ряд */
+  gap: 10px !important;         /* Расстояние между кнопками */
+  z-index: 9999 !important;    /* Выносит кнопки на самый передний план над фоном */
 }

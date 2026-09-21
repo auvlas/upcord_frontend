@@ -16,15 +16,15 @@ function Server() {
 }
 
 function ServersPanel() {
-    serversIds: number[] = [0, 1, 2, 3, 4]
     return (
         <>
             <section>
                 <DirectMessage />
                 <div>
                     {
-                        serversIds.map((serverId) => (
-                            <Server key={serverId} />
+                        servers.map((server) => (
+                            <Server key = {server.id}
+                                server = {server}/>
                         ))
                     }
                 </div>

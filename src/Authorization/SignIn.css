@@ -13,7 +13,7 @@ form.signin-form {
     margin: auto;
     padding: 24px;
     color: white;
-    background-color: #5f0752;
+    background-color: #242A54;
     flex-shrink: 0;
 }
 
@@ -34,7 +34,7 @@ form.signin-form > label > input {
     font-size: 15px;
     border: 0px;
     border-radius: 6px;
-    background-color: #34064f;
+    background-color: #575D86;
     color: white;
     outline: none;
 }
@@ -43,7 +43,7 @@ form.signin-form > button {
     padding: 12px;
     font-size: 16px;
     font-weight: 600;
-    background-color: #0a4c8a;
+    background-color: #465194;
     color: white;
     border: none;
     border-radius: 6px;

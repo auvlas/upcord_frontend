@@ -1,5 +1,5 @@
 div.sign-buttons.signup > button:last-child {
-    background-color: #8a4a0a;
+    background-color: #007bff;;
 }
 
 form.signup-form {
@@ -13,7 +13,7 @@ form.signup-form {
     margin: auto;
     padding: 24px;
     color: white;
-    background-color: #04120f72;
+    background-color: #242A54CC;
     flex-shrink: 0;
 }
 
@@ -34,7 +34,7 @@ form.signup-form > label > input {
     font-size: 15px;
     border: 0px;
     border-radius: 6px;
-    background-color: #3d0b5a;
+    background-color: #575D86;
     color: white;
     outline: none;
 }
@@ -43,7 +43,7 @@ form.signup-form > button {
     padding: 12px;
     font-size: 16px;
     font-weight: 600;
-    background-color: #a8139e;
+    background-color: #465194;
     color: white;
     border: none;
     border-radius: 6px;

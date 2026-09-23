@@ -1,0 +1,7 @@
+{
+    "$schema": "./node_modules/json-server/schema.json",
+    "ping": {
+        "status": "pong",
+        "timestamp": 82239238329
+    }
+}

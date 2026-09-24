@@ -7,21 +7,31 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
 
     useEffect(() => {
-        const token = Cookies.get('jwt_token')
+        const token = Cookies.get("jwt_token")
 
         if (token) {
+            document.body.className = ""
             setIsAuthenticated(true)
         } else {
+            document.body.className = "authorization"
             setIsAuthenticated(false)
         }
-    }, [])
+        
+        return () => {
+            document.body.className = ""
+        }
+    }, [isAuthenticated])
 
     if (!isAuthenticated) {
         return (
             <>
-                <Authorization ok = { () => setIsAuthenticated(true) } />
+                <Authorization ok = { () => { 
+                    Cookies.set("jwt_token", "fhhcvbaskxd")
+                    setIsAuthenticated(true)
+		}} />
             </>
         )
+    
     }
 
     return (

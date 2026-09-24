@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react"
 
-import "./SignUp.css"
+import "./Authorization.css"
 
 
 function SignUp({ ok }: { ok: () => void }) {
@@ -24,7 +24,7 @@ function SignUp({ ok }: { ok: () => void }) {
 
     return (
         <>
-            <form className="signup-form" onSubmit={handleSubmit}>
+            <form className="sign" onSubmit={handleSubmit}>
                 <h2>Sing Up</h2>
 
                 <label className="form-label">

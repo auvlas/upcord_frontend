@@ -1,20 +1,81 @@
-div.sign-buttons button + button {
+div.signin {
     margin-left: 8px;
 }
 
-div.sign-buttons > button {
+body.authorization{
+    background-image: url("./../assets/skiy.avif");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+button.sign {
     background-color: #80808080;
     color: white;
     border: none;
     padding: 8px 16px;
     border-radius: 6px;
+    position: fixed;   
+    top: 20px;         
+    right: 20px;
+    display: flex;
+    gap: 10px;
 }
 
-div.sign-buttons {
-  position: fixed;   
-  top: 20px;         
-  right: 20px;
-  display: flex;
-  gap: 10px;
-  z-index: 9999;
+button.sign.active {
+    background-color: #007bff;
+}
+
+form.sign {
+    border-radius: 6px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    min-width: 400px;
+    max-width: 90vw;
+    margin: auto;
+    padding: 24px;
+    color: white;
+    background-color: #242A54CC;
+    flex-shrink: 0;
+}
+
+form.sign > h2 {
+    margin: 0px;
+}
+
+form.sign > label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    text-align: left;
+}
+
+form.sign > label > input {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 6px;
+    background-color: #575D86;
+    color: white;
+    outline: none;
+}
+
+form.sign > button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #465194;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
 }

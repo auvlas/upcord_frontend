@@ -1,63 +1,48 @@
-import { useState, JSX } from 'react';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import {
+    Dispatch, SetStateAction, useState, JSX
+} from "react"
+import SignIn from "./Sign/SignIn"
+import SignUp from "./Sign/SignUp"
+import type {
+    SignForm, StateSingForm
+} from "./types"
 
-import './Authorization.css';
+import "./style.css"
 
 
-type FormType = typeof SignIn | typeof SignUp
+export default Authorization
 
-function Authorization({ ok }: () => void): JSX.Element {
+function Authorization({ isTouch, ok }: {
+    isTouch: boolean, ok: () => void
+}): JSX.Element {
 
-    const [CurrentForm, setCurrentForm]: [
-        FormType, 
-        React.Dispatch<React.SetStateAction<FormType>>
-    ] = useState<FormType>(SignIn);
+    const [Form, setForm]: StateSingForm = useState<SignForm>((): void => SignIn)
 
-    const clickSignIn = (): void => {
-        if (CurrentForm !== SignIn) {
-            setCurrentForm(SignIn);
-        }
-    }
-
-    const clickSignUp = (): void => {
-        if (CurrentForm !== SignUp) {
-            setCurrentForm(SignUp)
-        }
-    }
-
-    const [activeSignIn, activeSignUp]: [string, string]
-            = ((): [string, string] => {
-        switch (CurrentForm) {
-            case SignIn:
-                return ["active", ""];
-            case SignUp:
-                return ["", "active"];
-            default:
-                return ["", ""];
-        }
-    })();
+    const signin: () => void = (): void => setForm((): SignForm => SignIn)
+    const signup: () => void = (): void => setForm((): SignForm => SignUp)
 
     return (
         <>
-            <div>
-                <button 
-                        className={`sign signin ${activeSignIn}`} 
-                        onClick={clickSignIn}
-                >
-                    Sign In
-                </button>
+            <div id="root-authorization">
+                <div className={`authorization ${isTouch ? "mobile" : "" }`}>
+                    <button 
+                            className={`authorization ${ Form === SignIn ? "active" : "" }`} 
+                            onClick={signin}
+                    >
+                        Sign In
+                    </button>
 
-                <button 
-                        className={`sign signup ${activeSignUp}`} 
-                        onClick={clickSignUp}
-                >
-                    Sign Up
-                </button>
+                    <button 
+                            className={`authorization ${ Form === SignUp ? "active" : "" }`} 
+                            onClick={signup}
+                    >
+                        Sign Up
+                    </button>
+                </div>
+                <div id="form-authorization">
+                    <Form ok={ok} />
+                </div>
             </div>
-            {CurrentForm && <CurrentForm ok={ok} />}
         </>
-    );
+    )
 }
-
-export default Authorization;

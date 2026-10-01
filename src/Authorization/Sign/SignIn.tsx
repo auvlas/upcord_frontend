@@ -1,4 +1,4 @@
-import { useState, JSX } from "react"
+import { useEffect, useState, JSX } from "react"
 import type { StateField, InputEvent } from "./types"
 
 import "./style.css"
@@ -8,6 +8,14 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
     const [userName, setUserName]: StateField = useState("")
     const [password, setPassword]: StateField = useState("")
 
+    useEffect((): void => {
+        window.history.pushState(null, "", "/signin")
+    }, [])
+
+    const resetUrl = () => window.history.replaceState(
+        null, "", window.location.pathname
+    )
+    
     const handleSubmit: (InputEvent) => void
             = (event: InputEvent): void => {
         event.preventDefault()
@@ -27,6 +35,9 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         value={userName}
                         className="sign"
                         onChange={(event: InputEvent) => setUserName(event.target.value)}
+                        onFocus={(): void => window.history.replaceState(
+                            null, "", window.location.pathname + "#username")}
+                        onBlur={resetUrl}
                         placeholder="Input user name"
                         required
                     />
@@ -39,6 +50,9 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         value={password}
                         className="sign"
                         onChange={(event: InputEvent) => setPassword(event.target.value)}
+                        onFocus={(): void => window.history.replaceState(
+                            null, "", window.location.pathname + "#password")}
+                        onBlur={resetUrl}
                         placeholder="Input password"
                         required
                     />

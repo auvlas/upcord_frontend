@@ -2,6 +2,7 @@ import { useEffect, useState, JSX } from "react"
 import type { StateField, InputEvent } from "./types"
 
 import "./style.css"
+import selected from "./../selected"
 
 
 export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
@@ -12,10 +13,6 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
         window.history.pushState(null, "", "/signin")
     }, [])
 
-    const resetUrl = () => window.history.replaceState(
-        null, "", window.location.pathname
-    )
-    
     const handleSubmit: (InputEvent) => void
             = (event: InputEvent): void => {
         event.preventDefault()
@@ -35,9 +32,8 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         value={userName}
                         className="sign"
                         onChange={(event: InputEvent) => setUserName(event.target.value)}
-                        onFocus={(): void => window.history.replaceState(
-                            null, "", window.location.pathname + "#username")}
-                        onBlur={resetUrl}
+                        onFocus={selected.username}
+                        onBlur={selected.unselected}
                         placeholder="Input user name"
                         required
                     />
@@ -50,15 +46,21 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         value={password}
                         className="sign"
                         onChange={(event: InputEvent) => setPassword(event.target.value)}
-                        onFocus={(): void => window.history.replaceState(
-                            null, "", window.location.pathname + "#password")}
-                        onBlur={resetUrl}
+                        onFocus={selected.password}
+                        onBlur={selected.unselected}
                         placeholder="Input password"
                         required
                     />
                 </label>
 
-                <button className="sign" type="submit">Confirm</button>
+                <button
+                    className="sign"
+                    type="submit"
+                    onFocus={selected.confirm}
+                    onBlur={selected.unselected}
+                >
+                    Confirm
+                </button>
             </form>
         </>
     )

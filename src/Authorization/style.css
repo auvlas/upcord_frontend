@@ -1,15 +1,16 @@
 div.authorization.head {
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: 8px;
     gap: 8px;
+    top: 0px;
 }
 
 div.authorization.head.mobile {
-    top: auto;
-    bottom: 0px;
+    order: 1;
 }
 
 body.authorization {
@@ -17,10 +18,14 @@ body.authorization {
     flex-direction: column;
     background-color: black;
     background-image: url("./../assets/landspace.png");
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: left;
+    background-attachment: fixed;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    min-width: 340px;
+    min-width: 316px;
+    max-height: 100dvh;
 }
 
 button.authorization {
@@ -29,7 +34,7 @@ button.authorization {
     color: white;
     border: none;
     padding: 8px;
-    width: 140px;
+    width: 146px;
     text-align: center;
     justify-content: center;
     border-radius: 8px;
@@ -39,9 +44,20 @@ button.authorization {
     display: flex;
     gap: 8px;
     font-size: 25px;
+    cursor: pointer;
+    color: white;
 }
 
-button.authorization.active {
+button.authorization.active.signin {
+    background: linear-gradient(
+        225deg,
+        #a855f7,
+        #6366f1,
+        #38bdf8
+    );
+}
+
+button.authorization.active.signup {
     background: linear-gradient(
         135deg,
         #a855f7,
@@ -50,14 +66,27 @@ button.authorization.active {
     );
 }
 
-div.authorization.form {
-    display: flex;
-    flex: 1;
-    overflow-y: auto;
-    border-radius: 8px 8px 0px 0px;
-}
-
 div.authorization.sign {
     display: flex;
     gap: 8px;
+}
+
+button.authorization::-moz-selection {
+    background-color: white;
+    color: #575D86;
+}
+
+button.authorization::selection {
+    background-color: white;
+    color: #575D86;
+}
+
+button.authorization.active::-moz-selection {
+    background-color: #a855f7;
+    color: #38bdf8;
+}
+
+button.authorization.active::selection {
+    background-color: #a855f7;
+    color: #38bdf8;
 }

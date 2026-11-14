@@ -28,7 +28,7 @@ function Authorization({ isTouch, sign, ok }: {
         <>
             <div className={`authorization head ${isTouch ? "mobile" : "" }`}>
                 <button 
-                    className={`authorization ${ Form === SignIn ? "active" : "" }`} 
+                    className={`authorization signin ${ Form === SignIn ? "active" : "" }`} 
                     onClick={signin}
                     onFocus={selected.signin}
                     onBlur={selected.unselected}
@@ -37,7 +37,7 @@ function Authorization({ isTouch, sign, ok }: {
                 </button>
 
                 <button 
-                    className={`authorization ${ Form === SignUp ? "active" : "" }`} 
+                    className={`authorization signup ${ Form === SignUp ? "active" : "" }`} 
                     onClick={signup}
                     onFocus={selected.signup}
                     onBlur={selected.unselected}
@@ -45,9 +45,7 @@ function Authorization({ isTouch, sign, ok }: {
                     Sign Up
                 </button>
             </div>
-            <div className="authorization form">
-                <Form ok={ok} />
-            </div>
+            <Form ok={ok} />
         </>
     )
 }

@@ -28,7 +28,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
 
     return (
         <>
-            <form className="sign" onSubmit={handleSubmit}>
+            <div className="sign">
                 <a className="logo"
                     href="/"
                     onFocus={selected.upcord}
@@ -44,8 +44,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                     </h1>
                 </a>
 
-                <label className="sign">
-                    Visible name:
+                <form className="sign" onSubmit={handleSubmit}>
+                    <label className="sign required">
+                        <span className="sign required">*</span>Visible name
+                    </label>
                     <input 
                         type="text" 
                         value={visibleName}
@@ -56,10 +58,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         placeholder="Input visible name"
                         required
                     />
-                </label>
 
-                <label className="sign">
-                    User name:
+                    <label className="sign">
+                        <span className="sign required">*</span>User name
+                    </label>
                     <input 
                         type="text" 
                         value={userName}
@@ -70,10 +72,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         placeholder="Input user name"
                         required
                     />
-                </label>
 
-                <label className="sign">
-                    Password:
+                    <label className="sign">
+                        <span className="sign required">*</span>Password
+                    </label>
                     <input 
                         type="password" 
                         value={password}
@@ -84,10 +86,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         placeholder="Input password"
                         required
                     />
-                </label>
 
-                <label className="sign">
-                    First name:
+                    <label className="sign">
+                        First name
+                    </label>
                     <input 
                         type="text" 
                         value={firstName}
@@ -97,10 +99,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         onBlur={selected.unselected}
                         placeholder="Input first name"
                     />
-                </label>
 
-                <label className="sign">
-                    Second name:
+                    <label className="sign">
+                        Second name
+                    </label>
                     <input 
                         type="text" 
                         value={secondName}
@@ -110,10 +112,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         onBlur={selected.unselected}
                         placeholder="Input second name"
                     />
-                </label>
 
-                <label className="sign">
-                    Father name:
+                    <label className="sign">
+                        Father name
+                    </label>
                     <input 
                         type="text" 
                         value={fatherName}
@@ -123,10 +125,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         onBlur={selected.unselected}
                         placeholder="Input father name"
                     />
-                </label>
 
-                <label className="sign">
-                    Email:
+                    <label className="sign">
+                        Email
+                    </label>
                     <input 
                         type="email" 
                         value={email}
@@ -136,10 +138,10 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         onBlur={selected.unselected}
                         placeholder="Input email"
                     />
-                </label>
 
-                <label className="sign">
-                    Phone:
+                    <label className="sign">
+                        Phone
+                    </label>
                     <input 
                         type="tel" 
                         value={phone}
@@ -149,17 +151,17 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         onBlur={selected.unselected}
                         placeholder="Input phone"
                     />
-                </label>
 
-                <button
-                    className="sign confirm"
-                    type="submit"
-                    onFocus={selected.confirm}
-                    onBlur={selected.unselected}
-                >
-                    Confirm
-                </button>
-            </form>
+                    <button
+                        className="sign confirm"
+                        type="submit"
+                        onFocus={selected.confirm}
+                        onBlur={selected.unselected}
+                    >
+                        Confirm
+                    </button>
+                </form>
+            </div>
         </>
     )
 }

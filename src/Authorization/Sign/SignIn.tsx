@@ -22,7 +22,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
 
     return (
         <>
-            <form className="sign" onSubmit={handleSubmit}>
+            <div className="sign">
                 <a className="logo"
                     href="/"
                     onFocus={selected.upcord}
@@ -38,8 +38,10 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                     </h1>
                 </a>
 
-                <label className="sign">
-                    User name
+                <form className="sign" onSubmit={handleSubmit}>
+                    <label className="sign">
+                        <span className="sign required">*</span>User name
+                    </label>
                     <input
                         type="text"
                         value={userName}
@@ -50,10 +52,10 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         placeholder="Input user name"
                         required
                     />
-                </label>
 
-                <label className="sign">
-                    Password
+                    <label className="sign">
+                        <span className="sign required">*</span>Password
+                    </label>
                     <input
                         type="password"
                         value={password}
@@ -64,17 +66,17 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         placeholder="Input password"
                         required
                     />
-                </label>
 
-                <button
-                    className="sign confirm"
-                    type="submit"
-                    onFocus={selected.confirm}
-                    onBlur={selected.unselected}
-                >
-                    Confirm
-                </button>
-            </form>
+                    <button
+                        className="sign confirm"
+                        type="submit"
+                        onFocus={selected.confirm}
+                        onBlur={selected.unselected}
+                    >
+                        Confirm
+                    </button>
+                </form>
+            </div>
         </>
     )
 }

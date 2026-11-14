@@ -1,41 +1,10 @@
-a.logo {
-    text-decoration: none;
-    display: flex;
-    background-color: #242A54CC;
-    border-radius: 8px;
-    border: 0px;
-    gap: 8px;
-}
-
-img.logo {
-    height: 45px;
-}
-
-h1.logo {
-    margin: 0px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 45px;
-    letter-spacing: -2px;
-    line-height: 1;
-
-    background: linear-gradient(
-        90deg,
-        #a855f7,
-        #6366f1,
-        #38bdf8
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
 div.authorization.head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     margin: 8px;
+    gap: 8px;
 }
 
 div.authorization.head.mobile {
@@ -44,18 +13,27 @@ div.authorization.head.mobile {
 }
 
 body.authorization {
+    display: flex;
+    flex-direction: column;
     background-color: black;
     background-image: url("./../assets/landspace.png");
     background-size: cover;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    min-width: 340px;
 }
 
 button.authorization {
+    line-height: 1;
     background-color: #575D86;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 8px;
+    width: 140px;
+    text-align: center;
+    justify-content: center;
     border-radius: 8px;
+    white-space: nowrap;
     top: 20px;
     right: 20px;
     display: flex;
@@ -64,7 +42,12 @@ button.authorization {
 }
 
 button.authorization.active {
-    background-color: #007bff;
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #6366f1,
+        #38bdf8
+    );
 }
 
 div.authorization.form {
@@ -72,15 +55,6 @@ div.authorization.form {
     flex: 1;
     overflow-y: auto;
     border-radius: 8px 8px 0px 0px;
-}
-
-div.authorization.root {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
 }
 
 div.authorization.sign {

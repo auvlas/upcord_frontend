@@ -29,7 +29,20 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
     return (
         <>
             <form className="sign" onSubmit={handleSubmit}>
-                <h2 className="sign">Sing Up</h2>
+                <a className="logo"
+                    href="/"
+                    onFocus={selected.upcord}
+                    onBlur={selected.unselected}
+                >
+                    <img
+                        className="logo"
+                        src="/upcord1.svg"
+                    />
+
+                    <h1 className="logo">
+                        upcord
+                    </h1>
+                </a>
 
                 <label className="sign">
                     Visible name:
@@ -139,7 +152,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                 </label>
 
                 <button
-                    className="sign"
+                    className="sign confirm"
                     type="submit"
                     onFocus={selected.confirm}
                     onBlur={selected.unselected}

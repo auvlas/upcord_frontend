@@ -1,3 +1,35 @@
+a.logo {
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 8px;
+    border: 0px;
+    gap: 8px;
+}
+
+img.logo {
+    height: 45px;
+}
+
+h1.logo {
+    margin: 0px;
+    font-size: 45px;
+    letter-spacing: -2px;
+    line-height: 1;
+    white-space: nowrap;
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #6366f1,
+        #38bdf8
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .sign, .sign-confirm {
     min-width: 0px;
 }
@@ -9,17 +41,12 @@ form.sign {
     gap: 16px;
     text-align: left;
     border-radius: 8px;
-    width: max(200px, min(600px, 90%));
+    width: clamp(300px, 100% - max(40px, 10%), 600px);
     box-sizing: border-box;
     padding: 24px;
     color: white;
     flex-shrink: 0;
     margin: auto;
-}
-
-h2.sign {
-    margin: 0px;
-    text-align: center;
 }
 
 label.sign {
@@ -39,11 +66,16 @@ input.sign {
     outline: none;
 }
 
-button.sign {
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: #465194;
+button.sign.confirm {
+    font-size: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #6366f1,
+        #38bdf8
+    );
+
     color: white;
     border: none;
     border-radius: 6px;

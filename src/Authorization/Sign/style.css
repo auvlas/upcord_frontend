@@ -1,27 +1,93 @@
-a.logo {
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
+div.sign.scrolled {
     display: flex;
-    border-radius: 8px;
-    border: 0px;
     gap: 8px;
-    cursor: pointer;
-    flex-shrink: 0;
-    top: 8px;
+    text-align: left;
+    border-radius: 8px;
+    width: clamp(300px, 100% - 16px, 600px);
+    box-sizing: border-box;
+    padding: 8px;
+    margin: auto;
+    min-height: 0;
+    max-height: calc(100% - 65px);
+    flex-direction: column;
+    overflow-y: hidden;
 }
 
-img.logo {
+div.sign.scrolled.signin {
+    background-color: #242a54cc;
+}
+
+div.sign.scrolled.signup {
+    background-color: #9e7b00cc;
+}
+
+form.sign {
+    display: grid;
+    gap: 8px;
+    text-align: left;
+    box-sizing: border-box;
+    overflow-y: auto;
+    min-height: 0;
+    height: calc(100% - 53px);
+    flex-shrink: 0;
+}
+
+form.sign::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+a.sign.logo {
+    align-self: center;
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+img.sign.logo {
     height: 45px;
 }
 
-h1.logo {
+img.sign.logo.signup::-moz-selection {
+    background-color: #f8eb3844;
+}
+
+img.sign.logo.signup::selection {
+    background-color: #f8eb3844;
+}
+
+img.sign.logo.signin::-moz-selection {
+    background-color: #38bdf844;
+}
+
+img.sign.logo.signin::selection {
+    background-color: #38bdf844;
+}
+
+h1.sign.logo {
     margin: 0px;
     font-size: 45px;
     letter-spacing: -2px;
     line-height: 1;
     white-space: nowrap;
+}
 
+h1.sign.logo.signup {
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #f89238,
+        #f8eb38
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h1.sign.logo.signin {
     background: linear-gradient(
         135deg,
         #a855f7,
@@ -34,39 +100,32 @@ h1.logo {
     color: transparent;
 }
 
-form.sign {
-    display: grid;
-    gap: 8px;
-    text-align: left;
-    box-sizing: border-box;
-    flex: 1;
-    overflow-y: auto;
-    min-height: 0;
-}
-
-div.sign {
-    display: flex;
-    background-color: #242A54CC;
-    gap: 8px;
-    text-align: left;
-    border-radius: 8px;
-    width: clamp(300px, 100% - 16px, 600px);
-    box-sizing: border-box;
-    padding: 8px;
-    margin: auto;
-    max-height: calc(100% - 65px);
-    flex-direction: column;
-}
-
 label.sign {
     justify-self: start;
     font-size: 20px;
     margin-left: 8px;
-    color: #DDBBFF;
+}
+
+label.sign.signup {
+    color: #ffe8bb;
+}
+
+label.sign.signin {
+    color: #ddbbff;
 }
 
 span.sign.required {
     margin-right: 8px;
+    color: #f5756c;
+}
+
+span.sign.required::-moz-selection {
+    background-color: #00000000;
+    color: #eb4034;
+}
+
+span.sign.required::selection {
+    background-color: #00000000;
     color: #eb4034;
 }
 
@@ -76,7 +135,6 @@ input.sign {
     font-size: 15px;
     border: 0px;
     border-radius: 8px;
-    background-color: #575D86;
     color: white;
     outline: none;
     line-height: 1;
@@ -85,14 +143,54 @@ input.sign {
     color: white;
 }
 
-button.sign.confirm {
+input.sign.signin {
+    background-color: #575d86;
+}
+
+input.sign.signup {
+    background-color: #b89b37;
+}
+
+input.sign.signin::-moz-selection {
+    background-color: #00000000;
+    color: #ddbbff;
+}
+
+input.sign.signin::selection {
+    background-color: #00000000;
+    color: #ddbbff;
+}
+
+input.sign.signup::-moz-selection {
+    background-color: #00000000;
+    color: #ffe8bb;
+}
+
+input.sign.signup::selection {
+    background-color: #00000000;
+    color: #ffe8bb;
+}
+
+button.sign.confirm.signin {
     background: linear-gradient(
         135deg,
         #a855f7,
         #6366f1,
         #38bdf8
     );
+}
 
+button.sign.confirm.signup {
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #f89238,
+        #f8eb38
+    );
+}
+
+button.sign.confirm {
+    background-color: #575D86;
     color: white;
     border: none;
     border-radius: 8px;
@@ -104,22 +202,37 @@ button.sign.confirm {
     color: white;
 }
 
-form.sign {
-    scrollbar-width: none;
+h1.sign.logo.signup::-moz-selection,
+label.sign.signup::-moz-selection,
+button.sign.confirm.signup::-moz-selection {
+    background-color: #00000000;
+    color: #f8eb38;
 }
 
-form.sign::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+h1.sign.logo.signin::-moz-selection,
+label.sign.signin::-moz-selection,
+button.sign.confirm.signin::-moz-selection {
+    background-color: #00000000;
+    color: #38bdf8;
 }
 
-button.authorization::-moz-selection {
-    background-color: white;
-    color: #575D86;
+h1.sign.logo.signup::selection,
+label.sign.signup::selection,
+button.sign.confirm.signup::selection {
+    background-color: #00000000;
+    color: #f8eb38;
 }
 
-button.authorization::selection {
-    background-color: white;
-    color: #575D86;
+h1.sign.logo.signin::selection,
+label.sign.signin::selection,
+button.sign.confirm.signin::selection {
+    background-color: #00000000;
+    color: #38bdf8;
 }
 
+@media (max-height: 400px) {
+    form.sign {
+        height: auto;
+        overflow-y: hidden;
+    }
+}

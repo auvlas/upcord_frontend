@@ -28,30 +28,29 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
 
     return (
         <>
-            <div className="sign">
-                <a className="logo"
+            <div className="sign scrolled signup">
+                <a className="sign logo signup"
                     href="/"
                     onFocus={selected.upcord}
                     onBlur={selected.unselected}
                 >
                     <img
-                        className="logo"
-                        src="/upcord1.svg"
+                        className="sign logo signup"
+                        src="/upcord3.svg"
                     />
 
-                    <h1 className="logo">
+                    <h1 className="sign logo signup">
                         upcord
                     </h1>
                 </a>
-
                 <form className="sign" onSubmit={handleSubmit}>
-                    <label className="sign required">
+                    <label className="sign signup">
                         <span className="sign required">*</span>Visible name
                     </label>
                     <input 
                         type="text" 
                         value={visibleName}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setVisibleName(event.target.value)}
                         onFocus={selected.visiblename}
                         onBlur={selected.unselected}
@@ -59,13 +58,13 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         required
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         <span className="sign required">*</span>User name
                     </label>
                     <input 
                         type="text" 
                         value={userName}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setUserName(event.target.value)} 
                         onFocus={selected.username}
                         onBlur={selected.unselected}
@@ -73,13 +72,13 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         required
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         <span className="sign required">*</span>Password
                     </label>
                     <input 
                         type="password" 
                         value={password}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setPassword(event.target.value)} 
                         onFocus={selected.password}
                         onBlur={selected.unselected}
@@ -87,65 +86,65 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         required
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         First name
                     </label>
                     <input 
                         type="text" 
                         value={firstName}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setFirstName(event.target.value)} 
                         onFocus={selected.firstname}
                         onBlur={selected.unselected}
                         placeholder="Input first name"
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         Second name
                     </label>
                     <input 
                         type="text" 
                         value={secondName}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setSecondName(event.target.value)} 
                         onFocus={selected.secondname}
                         onBlur={selected.unselected}
                         placeholder="Input second name"
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         Father name
                     </label>
                     <input 
                         type="text" 
                         value={fatherName}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setFatherName(event.target.value)} 
                         onFocus={selected.fathername}
                         onBlur={selected.unselected}
                         placeholder="Input father name"
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         Email
                     </label>
                     <input 
                         type="email" 
                         value={email}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setEmail(event.target.value)} 
                         onFocus={selected.email}
                         onBlur={selected.unselected}
                         placeholder="Input email"
                     />
 
-                    <label className="sign">
+                    <label className="sign signup">
                         Phone
                     </label>
                     <input 
                         type="tel" 
                         value={phone}
-                        className="sign"
+                        className="sign signup"
                         onChange={(event: InputEvent) => setPhone(event.target.value)} 
                         onFocus={selected.phone}
                         onBlur={selected.unselected}
@@ -153,7 +152,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                     />
 
                     <button
-                        className="sign confirm"
+                        className="sign confirm signup"
                         type="submit"
                         onFocus={selected.confirm}
                         onBlur={selected.unselected}

@@ -1,3 +1,18 @@
+body.authorization {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    background-image: url("./../assets/landspace2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    min-width: 316px;
+    max-height: 100dvh;
+}
+
 div.authorization.head {
     position: sticky;
     display: flex;
@@ -9,28 +24,16 @@ div.authorization.head {
     top: 0px;
 }
 
-div.authorization.head.mobile {
-    order: 1;
+div.authorization.head.desktop {
+    margin-bottom: 0px;
 }
-
-body.authorization {
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-    background-image: url("./../assets/landspace.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    background-attachment: fixed;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    min-width: 316px;
-    max-height: 100dvh;
+div.authorization.head.mobile {
+    margin-top: 0px;
+    order: 1;
 }
 
 button.authorization {
     line-height: 1;
-    background-color: #575D86;
     color: white;
     border: none;
     padding: 8px;
@@ -48,6 +51,14 @@ button.authorization {
     color: white;
 }
 
+button.authorization.unactive.signin {
+    background-color: #b89b37;
+}
+
+button.authorization.unactive.signup {
+    background: #575d86;
+}
+
 button.authorization.active.signin {
     background: linear-gradient(
         225deg,
@@ -61,32 +72,37 @@ button.authorization.active.signup {
     background: linear-gradient(
         135deg,
         #a855f7,
-        #6366f1,
-        #38bdf8
+        #f89238,
+        #f8eb38
     );
 }
 
-div.authorization.sign {
-    display: flex;
-    gap: 8px;
-}
-
-button.authorization::-moz-selection {
-    background-color: white;
-    color: #575D86;
-}
-
-button.authorization::selection {
-    background-color: white;
-    color: #575D86;
-}
-
-button.authorization.active::-moz-selection {
-    background-color: #a855f7;
+button.authorization.active.signin::-moz-selection,
+button.authorization.unactive.signup::-moz-selection {
+    background-color: #00000000;
     color: #38bdf8;
 }
 
-button.authorization.active::selection {
-    background-color: #a855f7;
+button.authorization.active.signin::selection,
+button.authorization.unactive.signup::selection {
+    background-color: #00000000;
     color: #38bdf8;
+}
+
+button.authorization.active.signup::-moz-selection,
+button.authorization.unactive.signin::-moz-selection {
+    background-color: #00000000;
+    color: #f8eb38;
+}
+
+button.authorization.active.signup::selection,
+button.authorization.unactive.signin::selection {
+    background-color: #00000000;
+    color: #f8eb38;
+}
+
+@media (max-height: 400px) {
+    div.sign.scrolled {
+        overflow-y: auto;
+    }
 }

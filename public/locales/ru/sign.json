@@ -1,4 +1,17 @@
 {
-    "singin": "Вход",
-    "singup": "Регистрация"
+    "signin": "Войти",
+    "signup": "Создать",
+    "upcord": "upcord",
+    "login_your_acount": "Войди в свой акаунт",
+    "create_your_acount": "Создайте себе акаунт",
+    "input_visible_name": "Введите псевдоним",
+    "input_user_name": "Введите имя пользлователя",
+    "input_password": "Введите пароль",
+    "confirm_password": "Подтвердите пароль",
+    "input_first_name": "Введите имя",
+    "input_second_name": "Введите фамилию",
+    "input_father_name": "Введите отчество",
+    "input_email": "Введите почту",
+    "input_phone": "Введите телефон",
+    "confirm": "Подтвердить"
 }

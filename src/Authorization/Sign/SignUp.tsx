@@ -1,8 +1,9 @@
 import { useEffect, useState, JSX } from "react"
 import type { StateField, InputEvent } from "./types"
+import selected from "./../selected"
+import { useTranslation } from "react-i18next"
 
 import "./style.css"
-import selected from "./../selected"
 
 
 export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
@@ -14,6 +15,8 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
     const [fatherName, setFatherName]: StateField = useState("")
     const [email, setEmail]: StateField = useState("")
     const [phone, setPhone]: StateField = useState("")
+
+    const { t, i18n } = useTranslation()
 
     useEffect((): void => {
         window.history.pushState(null, "", "/signup")
@@ -49,7 +52,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                         onFocus={selected.createAcount}
                         onBlur={selected.unselected}
                     >
-                        Create your acount
+                        {t("create_your_acount")}
                     </a>
                     <div className="sign signup inputs">
                         <div className="sign signup input">
@@ -62,7 +65,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setVisibleName(event.target.value)}
                                 onFocus={selected.visiblename}
                                 onBlur={selected.unselected}
-                                placeholder="Input visible name"
+                                placeholder={t("input_visible_name")}
                                 required
                             />
                         </div>
@@ -77,7 +80,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setUserName(event.target.value)} 
                                 onFocus={selected.username}
                                 onBlur={selected.unselected}
-                                placeholder="Input user name"
+                                placeholder={t("input_user_name")}
                                 required
                             />
                         </div>
@@ -92,7 +95,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setPassword(event.target.value)} 
                                 onFocus={selected.password}
                                 onBlur={selected.unselected}
-                                placeholder="Input password"
+                                placeholder={t("input_password")}
                                 required
                             />
                         </div>
@@ -107,7 +110,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setConfirmPassword(event.target.value)} 
                                 onFocus={selected.confirmPassword}
                                 onBlur={selected.unselected}
-                                placeholder="Input password"
+                                placeholder={t("confirm_password")}
                                 required/>
                         </div>
 
@@ -121,7 +124,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setFirstName(event.target.value)} 
                                 onFocus={selected.firstname}
                                 onBlur={selected.unselected}
-                                placeholder="Input first name"/>
+                                placeholder={t("input_first_name")}/>
                         </div>
 
                         <div className="sign signup input">
@@ -134,7 +137,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setSecondName(event.target.value)} 
                                 onFocus={selected.secondname}
                                 onBlur={selected.unselected}
-                                placeholder="Input second name"/>
+                                placeholder={t("input_second_name")}/>
                         </div>
 
                         <div className="sign signup input">
@@ -147,7 +150,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setFatherName(event.target.value)} 
                                 onFocus={selected.fathername}
                                 onBlur={selected.unselected}
-                                placeholder="Input father name"/>
+                                placeholder={t("input_father_name")}/>
                         </div>
 
                         <div className="sign signup input">
@@ -160,7 +163,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setEmail(event.target.value)} 
                                 onFocus={selected.email}
                                 onBlur={selected.unselected}
-                                placeholder="Input email"/>
+                                placeholder={t("input_email")}/>
                         </div>
 
                         <div className="sign signup input">
@@ -173,7 +176,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setPhone(event.target.value)} 
                                 onFocus={selected.phone}
                                 onBlur={selected.unselected}
-                                placeholder="Input phone"/>
+                                placeholder={t("input_phone")}/>
                         </div>
                     </div>
                 </div>
@@ -185,7 +188,7 @@ export default function SignUp({ ok }: { ok: () => void }): JSX.Element {
                     onBlur={selected.unselected}
                 >
                     <i className="bi bi-list-check sign confirm signup"></i>
-                    Confirm
+                    {t("confirm")}
                 </button>
             </form>
         </>

@@ -1,13 +1,16 @@
 import { useEffect, useState, JSX } from "react"
 import type { StateField, InputEvent } from "./types"
+import selected from "./../selected"
+import { useTranslation } from "react-i18next"
 
 import "./style.css"
-import selected from "./../selected"
 
 
 export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
     const [userName, setUserName]: StateField = useState("")
     const [password, setPassword]: StateField = useState("")
+
+    const { t, i18n } = useTranslation()
 
     useEffect((): void => {
         window.history.pushState(null, "", "/signin")
@@ -35,7 +38,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         />
 
                         <h1 className="sign logo signin">
-                            upcord
+                            {t("upcord")}
                         </h1>
                     </a>
 
@@ -44,7 +47,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                         onFocus={selected.createAcount}
                         onBlur={selected.unselected}
                     >
-                        Login your acount
+                        {t("login_your_acount")}
                     </a>
 
                     <div className="sign signin inputs">
@@ -58,7 +61,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setUserName(event.target.value)}
                                 onFocus={selected.username}
                                 onBlur={selected.unselected}
-                                placeholder="Input user name"
+                                placeholder={t("input_user_name")}
                                 required/>
                         </div>
 
@@ -72,7 +75,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                                 onChange={(event: InputEvent) => setPassword(event.target.value)}
                                 onFocus={selected.password}
                                 onBlur={selected.unselected}
-                                placeholder="Input password"
+                                placeholder={t("input_password")}
                                 required/>
                         </div>
                     </div>
@@ -85,7 +88,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                     onBlur={selected.unselected}
                 >
                     <i className="bi bi-person-check-fill sign confirm signin"></i>
-                    Confirm
+                    {t("confirm")}
                 </button>
             </form>
         </>

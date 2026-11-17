@@ -2,8 +2,10 @@ import Cookies from "js-cookie"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import App from "./App"
+import i18n from "./i18n"
 
 import "./main.css"
+
 
 Cookies.remove("jwt_token")
 

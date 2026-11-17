@@ -7,13 +7,8 @@ import SignUp from "./Sign/SignUp"
 import type {
     SignForm, StateSingForm
 } from "./types"
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 import selected from "./selected"
-
-import translationRU from './../../public/locales/ru/sign.json';
-import translationEN from './../../public/locales/en/sign.json';
+import { useTranslation } from "react-i18next"
 
 import "./style.css"
 
@@ -25,11 +20,16 @@ function Authorization({ isTouch, sign, ok }: {
     sign: SignForm,
     ok: () => void
 }): JSX.Element {
-
     const [Form, setForm]: StateSingForm = useState<SignForm>((): SignForm => sign)
 
     const signin: () => void = (): void => setForm((): SignForm => SignIn)
     const signup: () => void = (): void => setForm((): SignForm => SignUp)
+
+    const { t, i18n } = useTranslation()
+
+    useEffect((): void => {
+        document.body.className = "authorization"
+    })
 
     return (
         <>
@@ -41,7 +41,7 @@ function Authorization({ isTouch, sign, ok }: {
                     onBlur={selected.unselected}
                 >
                     <i className="bi bi-person authorization icon signin"/>
-                    Sign In
+                    {t("signin")}
                 </button>
 
                 <button 
@@ -51,7 +51,7 @@ function Authorization({ isTouch, sign, ok }: {
                     onBlur={selected.unselected}
                 >
                     <i className="bi bi-person-plus authorization icon signup"/>
-                    Sign Up
+                    {t("signup")}
                 </button>
             </div>
 

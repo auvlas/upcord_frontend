@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+
 type StateBoolean = [boolean, Dispatch<SetStateAction<boolean>>]
 type StateTouchScreen = StateBoolean
 

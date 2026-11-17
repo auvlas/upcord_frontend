@@ -1,16 +1,17 @@
+import { useEffect } from "react"
+import ServersPanel from "./ServerPanel"
+
+import "./style.css"
+
 function Messenger() {
+    useEffect((): void => {
+        document.body.className = "messenger"
+    })
+
     return (
         <>
-            Messanger
-        {/*
-        <>
-            <ServersPanel servers = {servers}/>
-            <ChannelsPanel channels = {channels} />
-            <MessagesPanel messages = {messages} />
-            <UsersPanel users = {users} />
-            <SettingsPanel />
-        </>
-        */}
+            <ServersPanel/>
+            <ServersPanel/>
         </>
     )
 }

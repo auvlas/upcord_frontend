@@ -40,6 +40,7 @@ function Authorization({ isTouch, sign, ok }: {
                     onFocus={selected.signin}
                     onBlur={selected.unselected}
                 >
+                    <i className="bi bi-person authorization icon signin"/>
                     Sign In
                 </button>
 
@@ -49,6 +50,7 @@ function Authorization({ isTouch, sign, ok }: {
                     onFocus={selected.signup}
                     onBlur={selected.unselected}
                 >
+                    <i className="bi bi-person-plus authorization icon signup"/>
                     Sign Up
                 </button>
             </div>

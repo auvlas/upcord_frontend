@@ -2,25 +2,28 @@ body.authorization {
     display: flex;
     flex-direction: column;
     background-color: black;
-    background-image: url("./../assets/landspace2.png");
+    background-image: url("./../assets/landspace6.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    min-width: 316px;
-    max-height: 100dvh;
+    min-width: 340px;
+    height: 100dvh;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 div.authorization.head {
-    position: sticky;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: nowrap;
-    margin: 8px;
-    gap: 8px;
+    gap: 10px;
     top: 0px;
 }
 
@@ -33,35 +36,36 @@ div.authorization.head.mobile {
 }
 
 button.authorization {
+    position: relative;
     line-height: 1;
     color: white;
     border: none;
-    padding: 8px;
+    padding: 12px;
+    padding-left: 32px;
     width: 146px;
-    text-align: center;
-    justify-content: center;
-    border-radius: 8px;
+    border-radius: 50px;
     white-space: nowrap;
-    top: 20px;
-    right: 20px;
     display: flex;
-    gap: 8px;
-    font-size: 25px;
+    font-size: 15px;
     cursor: pointer;
     color: white;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 button.authorization.unactive.signin {
-    background-color: #b89b37;
+    background-color: #432e59aa;
 }
 
 button.authorization.unactive.signup {
-    background: #575d86;
+    background-color: #242a54aa;
 }
 
 button.authorization.active.signin {
     background: linear-gradient(
-        225deg,
+        100deg,
         #a855f7,
         #6366f1,
         #38bdf8
@@ -70,10 +74,12 @@ button.authorization.active.signin {
 
 button.authorization.active.signup {
     background: linear-gradient(
-        135deg,
-        #a855f7,
-        #f89238,
-        #f8eb38
+        100deg,
+        #8c00ff,
+        #e923f7,
+        #f7239b,
+        #ff8c00,
+        #ffc400
     );
 }
 
@@ -101,8 +107,56 @@ button.authorization.unactive.signin::selection {
     color: #f8eb38;
 }
 
-@media (max-height: 400px) {
+i.authorization.icon.signin,
+i.authorization.icon.signup {
+    position: absolute;
+    left: 12px;
+    font-size: 20px;
+}
+
+@media (max-height: 500px) {
+    div.sign.signin.inputs,
+    div.sign.signup.inputs {
+        max-height: none;
+        flex-shrink: 0;
+        overflow-y: hidden;
+    }
+
     div.sign.scrolled {
+        max-height: none;
         overflow-y: auto;
     }
+}
+
+@media (max-height: 400px) {
+    div.sign.scrolled {
+        flex-shrink: 0;
+        max-height: none;
+        overflow-y: hidden;
+    }
+
+    form.sign {
+        height: auto;
+        overflow-y: auto;
+    }
+}
+
+@media (max-height: 300px) {
+    form.sign {
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    body.authorization {
+        height: auto;
+        overflow-y: auto;
+    }
+}
+
+form.sign,
+div.sign.inputs,
+div.sign.scrolled,
+body.authorization {
+    scrollbar-width: thin;
+    scrollbar-color: #aaaaaa44 transparent;
 }

@@ -12,6 +12,10 @@ function upcord(): void {
     selected("#upcord")
 }
 
+function createAcount(): void {
+    selected("#create_acount")
+}
+
 function visiblename(): void {
     selected("#visiblename")
 }
@@ -22,6 +26,10 @@ function username(): void {
 
 function password(): void {
     selected("#password")
+}
+
+function confirmPassword(): void {
+    selected("#confirm_password")
 }
 
 function firstname(): void {
@@ -60,9 +68,11 @@ export default {
     unselected,
     selected,
     upcord,
+    createAcount,
     visiblename,
     username,
     password,
+    confirmPassword,
     firstname,
     secondname,
     fathername,

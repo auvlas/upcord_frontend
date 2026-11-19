@@ -17,14 +17,23 @@ body.authorization {
     overflow-y: hidden;
 }
 
-div.authorization.head {
+div.authorization.head,
+div.authorization.head-sign {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: ;
     flex-wrap: nowrap;
     gap: 10px;
     top: 0px;
+    justify-content: safe flex-end;
+}
+
+div.authorization.head {
+    flex-shrink: 0;
+}
+
+div.authorization.head-sign {
+    overflow-x: auto;
 }
 
 div.authorization.head.desktop {
@@ -51,14 +60,21 @@ button.authorization {
     color: white;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
+button.authorization.language {
+    width: 80px;
+}
+
+button.authorization.language.signup,
 button.authorization.unactive.signin {
     background-color: #432e59aa;
 }
 
+button.authorization.language.signin,
 button.authorization.unactive.signup {
     background-color: #242a54aa;
 }
@@ -107,6 +123,7 @@ button.authorization.unactive.signin::selection {
     color: #f8eb38;
 }
 
+i.authorization.language.icon,
 i.authorization.icon.signin,
 i.authorization.icon.signup {
     position: absolute;

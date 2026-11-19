@@ -11,7 +11,6 @@ function Messenger() {
     return (
         <>
             <ServersPanel/>
-            <ServersPanel/>
         </>
     )
 }

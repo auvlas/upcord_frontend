@@ -13,5 +13,7 @@
     "input_father_name": "Input father name",
     "input_email": "Input email",
     "input_phone": "Input phone",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "en": "en",
+    "ru": "ru"
 }

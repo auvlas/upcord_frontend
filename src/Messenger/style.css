@@ -1,7 +1,50 @@
 body.messenger {
-    background: black;
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+    box-sizing: border-box;
+    background: linear-gradient(
+        135deg,
+        #23327a,
+        #010724
+    );
 }
 
 div.server-panel {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 80px;
+    background-color: #88888844;
+    border-radius: 12px;
+}
 
+button.direct-message:hover {
+    background-color: #ddbbff44;
+}
+
+button.direct-message {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    margin: 4px;
+    padding: 0px;
+}
+
+img.direct-message {
+    width: 100%;
+    border-radius: 0px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+button.direct-message,
+img.direct-message {
+    border-radius: 12px;
+}
+
+div.space-panel-server {
+    margin: 0px 4px;
+    border-bottom: 1px solid #ddbbff;
 }

@@ -1,3 +1,7 @@
+import DirectMessage from "./DirectMessage"
+import Space from "./Space"
+
+
 function Server() {
     const name = server.name
     const indexSpace = name.indexOf(" ");
@@ -18,7 +22,10 @@ function Server() {
 function ServersPanel() {
     return (
         <>
-            <div/>
+            <div className="server-panel">
+                <DirectMessage/>
+                <Space/>
+            </div>
         </>
     )
 }

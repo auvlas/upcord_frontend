@@ -56,6 +56,10 @@ function confirm(): void {
     selected("#confirm")
 }
 
+function language(): void {
+    selected("#language")
+}
+
 function signin(): void {
     selected("#signin")
 }
@@ -79,6 +83,7 @@ export default {
     email,
     phone,
     confirm,
+    language,
     signin,
     signup
 }

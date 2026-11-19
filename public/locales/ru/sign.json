@@ -13,5 +13,7 @@
     "input_father_name": "Введите отчество",
     "input_email": "Введите почту",
     "input_phone": "Введите телефон",
-    "confirm": "Подтвердить"
+    "confirm": "Подтвердить",
+    "en": "en",
+    "ru": "ru"
 }

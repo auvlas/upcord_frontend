@@ -34,24 +34,36 @@ function Authorization({ isTouch, sign, ok }: {
     return (
         <>
             <div className={`authorization head ${isTouch ? "mobile" : "desktop" }`}>
-                <button 
-                    className={`authorization signin ${ Form === SignIn ? "active" : "unactive" }`} 
-                    onClick={signin}
-                    onFocus={selected.signin}
-                    onBlur={selected.unselected}
-                >
-                    <i className="bi bi-person authorization icon signin"/>
-                    {t("signin")}
-                </button>
+                <div className={`authorization head-sign ${isTouch ? "mobile" : "desktop" }`}>
+                    <button 
+                        className={`authorization signin ${ Form === SignIn ? "active" : "unactive" }`} 
+                        onClick={signin}
+                        onFocus={selected.signin}
+                        onBlur={selected.unselected}
+                    >
+                        <i className="bi bi-person authorization icon signin"/>
+                        {t("signin")}
+                    </button>
+
+                    <button 
+                        className={`authorization signup ${ Form === SignUp ? "active" : "unactive" }`} 
+                        onClick={signup}
+                        onFocus={selected.signup}
+                        onBlur={selected.unselected}
+                    >
+                        <i className="bi bi-person-plus authorization icon signup"/>
+                        {t("signup")}
+                    </button>
+                </div>
 
                 <button 
-                    className={`authorization signup ${ Form === SignUp ? "active" : "unactive" }`} 
-                    onClick={signup}
-                    onFocus={selected.signup}
+                    className={`authorization language ${ Form === SignIn ? "signin" : "signup" }`} 
+                    onClick={(): void => {i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru")}}
+                    onFocus={selected.language}
                     onBlur={selected.unselected}
                 >
-                    <i className="bi bi-person-plus authorization icon signup"/>
-                    {t("signup")}
+                    <i className="bi bi-globe2 authorization language icon"/>
+                    {t(i18n.language === "ru" ? "ru" : "en")}
                 </button>
             </div>
 

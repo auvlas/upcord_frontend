@@ -33,10 +33,10 @@ function Authorization({ isTouch, sign, ok }: {
 
     return (
         <>
-            <div className={`authorization head ${isTouch ? "mobile" : "desktop" }`}>
-                <div className={`authorization head-sign ${isTouch ? "mobile" : "desktop" }`}>
+            <div className={`authorization head ${isTouch ? "mobile" : "desktop"}`}>
+                <div className={`authorization head-sign ${isTouch ? "mobile" : "desktop"}`}>
                     <button 
-                        className={`authorization signin ${ Form === SignIn ? "active" : "unactive" }`} 
+                        className={`authorization signin ${Form === SignIn ? "active" : "unactive"}`} 
                         onClick={signin}
                         onFocus={selected.signin}
                         onBlur={selected.unselected}
@@ -46,7 +46,7 @@ function Authorization({ isTouch, sign, ok }: {
                     </button>
 
                     <button 
-                        className={`authorization signup ${ Form === SignUp ? "active" : "unactive" }`} 
+                        className={`authorization signup ${Form === SignUp ? "active" : "unactive"}`} 
                         onClick={signup}
                         onFocus={selected.signup}
                         onBlur={selected.unselected}
@@ -57,7 +57,7 @@ function Authorization({ isTouch, sign, ok }: {
                 </div>
 
                 <button 
-                    className={`authorization language ${ Form === SignIn ? "signin" : "signup" }`} 
+                    className={`authorization language ${Form === SignIn ? "signin" : "signup"}`} 
                     onClick={(): void => {i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru")}}
                     onFocus={selected.language}
                     onBlur={selected.unselected}

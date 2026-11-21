@@ -4,7 +4,7 @@ import { useState } from 'react'
 type StateBoolean = [boolean, Dispatch<SetStateAction<boolean>>]
 type StateTouchScreen = StateBoolean
 
-export function useTouchScreen(): boolean {
+function useTouchScreen(): boolean {
     const [isTouch]: StateBoolean = useState<boolean>((): boolean => {
         if (typeof window === 'undefined') return false
         
@@ -18,3 +18,5 @@ export function useTouchScreen(): boolean {
 
     return isTouch
 }
+
+export default useTouchScreen

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useTouchScreen } from "./hooks"
+import useTouchScreen from "./hooks"
 import Cookies from "js-cookie"
 import Messenger from "./Messenger/Messenger"
 import Authorization from "./Authorization/Authorization"

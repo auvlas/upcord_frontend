@@ -1,33 +1,26 @@
 import DirectMessage from "./DirectMessage"
 import Space from "./Space"
+import ServerArray from "./ServerArray"
+import Profile from "./Profile"
+import useTouchScreen from "./../hooks"
 
 
-function Server() {
-    const name = server.name
-    const indexSpace = name.indexOf(" ");
-    
-    let title: string;
-    
-    if (indexSpace === -1 || indexSpace === name.length - 1) {
-        title = name.substring(0, 2);
-    } else {
-        title = name[0] + name[indexSpace + 1];
-    }
+function ServerPanel() {
+    const isTouch: boolean = useTouchScreen()
 
-    title = title.toUpperCase()
-
-    return ( <> <button> {title} </button> </> );
-}
-
-function ServersPanel() {
     return (
         <>
-            <div className="server-panel">
-                <DirectMessage/>
-                <Space/>
+            <div className={`server-bar ${isTouch ? "mobile" : "desktop"}`}>
+                <div className="server panel">
+                    <DirectMessage/>
+                </div>
+                <ServerArray/>
+                <div className="server panel">
+                    <Profile/>
+                </div>
             </div>
         </>
     )
 }
 
-export default ServersPanel
+export default ServerPanel

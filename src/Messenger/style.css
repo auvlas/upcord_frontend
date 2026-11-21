@@ -1,50 +1,133 @@
 body.messenger {
     display: flex;
-    width: 100dvw;
+    min-width: 100dvw;
     height: 100dvh;
     position: relative;
     box-sizing: border-box;
+    gap: 10px;
+    padding: 10px;
+    flex: 1;
     background: linear-gradient(
         135deg,
-        #23327a,
-        #010724
+        #23327b,
+        #111524
     );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: auto;
+    min-width: 100%; 
+    width: max-content;
 }
 
-div.server-panel {
+body.messenger.desktop {
+    flex-direction: row;
+}
+
+body.messenger.mobile {
+    flex-direction: column-reverse;
+}
+
+div.server-bar {
+    display: flex;
+    gap: 10px;
+}
+
+div.server-bar.desktop {
+    flex-direction: column;
+}
+
+div.server-bar.mobile {
+    flex-direction: row;
+}
+
+div.panel {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    background-color: #11152488;
+    flex-shrink: 0;
+}
+
+div.panel.main {
+    flex-direction: row;
+    width: auto;
+    flex: 1;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background-color: #00000000;
+    overflow: hidden;
+}
+
+div.server.panel {
     width: 80px;
-    background-color: #88888844;
     border-radius: 12px;
 }
 
+div.servers {
+    flex: 1;
+}
+
+div.member.panel,
+div.chat.panel {
+    min-width: 200px;
+}
+
+div.chat.panel,
+div.member.panel {
+    width: 20%;
+    max-width: 400px;
+}
+
+div.chat.panel {
+    border-radius: 12px 0px 0px 12px;
+}
+
+div.member.panel {
+    border-radius: 0px 12px 12px 0px;
+}
+
+div.message.panel {
+    width: auto;
+    min-width: 300px;
+    flex: 1;
+}
+
+i.icon {
+    color: #ddbbff;
+}
+
+i.icon.profile {
+    font-size: 32px;
+}
+
+button.profile:hover,
 button.direct-message:hover {
     background-color: #ddbbff44;
 }
 
+button.profile,
 button.direct-message {
     display: flex;
     background-color: transparent;
+    border-radius: 10px;
     border: none;
     margin: 4px;
     padding: 0px;
 }
 
+i.icon.profile,
 img.direct-message {
     width: 100%;
-    border-radius: 0px;
     padding: 4px;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 
-button.direct-message,
-img.direct-message {
-    border-radius: 12px;
-}
-
-div.space-panel-server {
-    margin: 0px 4px;
+div.space.horisontal {
     border-bottom: 1px solid #ddbbff;
+}
+
+div.space.vertical {
+    border-right: 1px solid #ddbbff;
 }

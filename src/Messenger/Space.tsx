@@ -1,7 +1,7 @@
-function Space() {
+function Space({ type }: { type: string }) {
     return (
         <>
-            <div className="space-panel-server"/>
+            <div className={`space ${type}`}/>
         </>
     )
 }

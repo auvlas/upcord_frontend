@@ -1,7 +1,7 @@
 function ServerArray() {
     return (
         <>
-            <div className="server panel servers"/>
+            <div className="servers"/>
         </>
     )
 }

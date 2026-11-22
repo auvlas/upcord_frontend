@@ -2,8 +2,8 @@ import { useEffect } from "react"
 import ServerPanel from "./ServerPanel"
 import ChatPanel from "./ChatPanel"
 import MessagePanel from "./MessagePanel"
-import MemberPanel from "./MemberPanel"
-import Space from "./Space"
+import OptionPanel from "./OptionPanel"
+import SenderPanel from "./SenderPanel"
 import useTouchScreen from "./../hooks"
 
 import "./style.css"
@@ -20,12 +20,13 @@ function Messenger() {
     return (
         <>
             <ServerPanel/>
-            <div className="panel main">
-                <ChatPanel/>
-                <Space type="vertical"/>
-                <MessagePanel/>
-                <Space type="vertical"/>
-                <MemberPanel/>
+            <div className="panel main vertical">
+                <div className="panel main horisontal">
+                    <ChatPanel/>
+                    <MessagePanel/>
+                    <OptionPanel/>
+                </div>
+                <SenderPanel/>
             </div>
         </>
     )

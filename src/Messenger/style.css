@@ -1,11 +1,10 @@
 body.messenger {
     display: flex;
-    min-width: 100dvw;
     height: 100dvh;
     position: relative;
     box-sizing: border-box;
-    gap: 10px;
-    padding: 10px;
+    gap: 4px;
+    padding: 4px 0px;
     flex: 1;
     background: linear-gradient(
         135deg,
@@ -17,117 +16,318 @@ body.messenger {
     background-position: center;
     background-attachment: fixed;
     overflow-x: auto;
-    min-width: 100%; 
-    width: max-content;
-}
-
-body.messenger.desktop {
-    flex-direction: row;
-}
-
-body.messenger.mobile {
-    flex-direction: column-reverse;
-}
-
-div.server-bar {
-    display: flex;
-    gap: 10px;
-}
-
-div.server-bar.desktop {
-    flex-direction: column;
-}
-
-div.server-bar.mobile {
+    width: auto;
+    min-width: 500px;
+    max-width: 100dvw;
     flex-direction: row;
 }
 
 div.panel {
     display: flex;
-    flex-direction: column;
     background-color: #11152488;
-    flex-shrink: 0;
+    flex-direction: column;
 }
 
 div.panel.main {
-    flex-direction: row;
     width: auto;
     flex: 1;
-    flex-shrink: 0;
-    border-radius: 12px;
-    background-color: #00000000;
     overflow: hidden;
+    background-color: transparent;
+    min-width: 300px;
 }
 
-div.server.panel {
-    width: 80px;
-    border-radius: 12px;
+div.panel.main.horisontal {
+    flex-direction: row;
+}
+
+div.panel.main.vertical {
+    flex-direction: column;
+    gap: 4px;
+}
+
+div.panel.server {
+    gap: 4px;
+    border-radius: 0px 12px 12px 0px;
 }
 
 div.servers {
     flex: 1;
 }
 
-div.member.panel,
-div.chat.panel {
-    min-width: 200px;
-}
-
-div.chat.panel,
-div.member.panel {
-    width: 20%;
-    max-width: 400px;
-}
-
-div.chat.panel {
+div.panel.chat {
     border-radius: 12px 0px 0px 12px;
 }
 
-div.member.panel {
-    border-radius: 0px 12px 12px 0px;
+div.panel.option {
+    border-radius: 0px;
 }
 
-div.message.panel {
+div.panel.server,
+div.panel.chat,
+div.panel.option {
+    box-sizing: border-box;
+    padding: 4px;
+    width: 60px;
+}
+
+div.panel.server:focus-within,
+div.panel.server:hover,
+div.panel.chat:focus-within,
+div.panel.chat:hover,
+div.panel.option:focus-within,
+div.panel.option:hover {
+    min-width: 160px;
+    border-radius: 12px;
+}
+
+div.panel.server:focus-within,
+div.panel.server:hover {
+    margin-left: 4px;
+}
+
+div.panel.option:focus-within,
+div.panel.option:hover {
+    margin-right: 4px;
+}
+
+div.panel.message {
+    background-color: transparent;
     width: auto;
-    min-width: 300px;
+    min-width: 160px;
     flex: 1;
 }
 
+div.control.mute {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
 i.icon {
+    line-height: 1;
     color: #ddbbff;
 }
 
-i.icon.profile {
-    font-size: 32px;
+i.icon.mute {
+    font-size: 19px;
 }
 
+i.icon.profile {
+    font-size: 44px;
+}
+
+button.sender:focus,
+button.mute:focus,
+button.profile:focus,
+button.direct-message:focus,
+textarea.sender:hover,
+button.sender:hover,
+button.mute:hover,
 button.profile:hover,
 button.direct-message:hover {
-    background-color: #ddbbff44;
+    outline: none;
+    background-color: #ddbbff10;
+}
+
+button.sender,
+button.mute,
+button.profile,
+button.direct-message {
+    display: grid;
+    background-color: transparent;
+    border-radius: 8px;
+    border: none;
+    padding: 0px;
+    align-items: center;
+    justify-items: center;
 }
 
 button.profile,
 button.direct-message {
-    display: flex;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    margin: 4px;
-    padding: 0px;
+    width: 52px;
 }
 
+i.icon.mute,
 i.icon.profile,
+i.icon.sender,
 img.direct-message {
     width: 100%;
     padding: 4px;
     box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+}
+
+div.panel.sender {
+    position: relative;
+    border-radius: 12px;
+    padding: 4px;
+    box-sizing: border-box;
+    min-width: 300px;
+    margin-right: 4px;
+}
+
+textarea.sender {
+    display: block;
     border-radius: 8px;
+    font-size: 25px;
+    color: #ddbbff;
+    background-color: #ddbbff08;
+    border: 4px solid transparent;
+    padding: 0px;
+    border-bottom: 43px solid transparent;
+    overflow-y: auto;
+    resize: none;
+    box-sizing: border-box;
+    field-sizing: content;
+    line-height: 1.2;
+    min-height: calc(1lh + 8px + 43px);
+    max-height: calc(5lh + 8px + 43px);
+    align-self: stretch;
+    width: 100%;
+    min-width: 300px;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    outline: none;
 }
 
-div.space.horisontal {
-    border-bottom: 1px solid #ddbbff;
+div.sender.buttons {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 4px;
+    height: 35px;
+    padding: 4px;
+    gap: 4px;
 }
 
-div.space.vertical {
-    border-right: 1px solid #ddbbff;
+div.sender.buttons.first {
+    left: 4px;
+}
+
+div.sender.buttons.last {
+    right: 4px;
+}
+
+i.icon.sender {
+    font-size: 27px;
+}
+
+@media (min-width: 500px) {
+    div.panel.chat {
+        width: clamp(60px, 60px + (100dvw - 500px) * (50 / 58), 110px);
+        border-top-right-radius: clamp(0px, (100dvw - 500px) * (6 / 58), 6px);
+        border-bottom-right-radius: clamp(0px, (100dvw - 500px) * (6 / 58), 6px);
+    }
+
+    div.panel.option {
+        border-top-right-radius: clamp(0px, (100dvw - 500px) * (12 / 58), 12px);
+        border-bottom-right-radius: clamp(0px, (100dvw - 500px) * (12 / 58), 12px);
+        margin-right: clamp(0px, (100dvw - 500px) * (4 / 58), 4px);
+    }
+
+    div.panel.server {
+        border-top-left-radius: clamp(0px, (100dvw - 500px) * (12 / 58), 12px);
+        border-bottom-left-radius: clamp(0px, (100dvw - 500px) * (12 / 58), 12px);
+        margin-left: clamp(0px, (100dvw - 500px) * (4 / 58), 4px);
+    }
+}
+
+@media (min-width: 558px) {
+    div.panel.option {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        margin-right: 4px;
+    }
+
+    div.panel.server {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        margin-left: 4px;
+    }
+
+    div.panel.chat {
+        width: clamp(110px, 110px + (100dvw - 558px) * (50 / 100), 160px);
+        border-top-right-radius: clamp(6px, 6px + (100dvw - 558px) * (6 / 100), 12px);
+        border-bottom-right-radius: clamp(6px, 6px + (100dvw - 558px) * (6 / 100), 12px);
+    }
+
+    div.panel.option {
+        width: clamp(60px, 60px + (100dvw - 558px) * (50 / 100), 110px);
+        border-top-left-radius: clamp(0px, (100dvw - 558px) * (6 / 100), 6px);
+        border-bottom-left-radius: clamp(0px, (100dvw - 558px) * (6 / 100), 6px);
+    }
+}
+
+@media (min-width: 658px) {
+    div.panel.chat {
+        width: 160px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    div.panel.option {
+        width: clamp(110px, 110px + (100dvw - 658px) * (50 / 50), 160px);
+        border-top-right-radius: clamp(6px, 6px + (100dvw - 658px) * (6 / 50), 12px);
+        border-bottom-right-radius: clamp(6px, 6px + (100dvw - 658px) * (6 / 50), 12px);
+    }
+}
+
+@media (min-width: 708px) {
+    div.panel.option {
+        width: 160px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+}
+
+@media (min-width: 900px) {
+    div.panel.chat,
+    div.panel.option {
+        width: clamp(160px, 160px + (100dvw - 900px) * (100 / 200), 260px);
+    }
+}
+
+@media (min-width: 1100px) {
+    div.panel.chat,
+    div.panel.option {
+        width: 260px;
+    }
+
+    div.panel.server {
+        width: clamp(60px, 60px + (100dvw - 1100px) * (200 / 200), 260px);
+    }
+}
+
+@media (min-width: 1300px) {
+    div.panel.server {
+        width: 260px;
+    }
+}
+
+@media (min-width: 1500px) {
+    div.panel.chat,
+    div.panel.option {
+        width: clamp(260px, 260px + (100dvw - 1500px) * (100 / 200), 360px);
+    }
+}
+
+@media (min-width: 1700px) {
+    div.panel.chat,
+    div.panel.option {
+        width: 360px;
+    }
+
+    div.panel.server {
+        width: clamp(260px, 260px + (100dvw - 1700px) * (100 / 100), 360px);
+    }
+}
+
+@media (min-width: 1800px) {
+    div.panel.server {
+        width: 360px;
+    }
 }

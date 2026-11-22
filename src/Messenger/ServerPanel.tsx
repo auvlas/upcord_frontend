@@ -1,5 +1,4 @@
 import DirectMessage from "./DirectMessage"
-import Space from "./Space"
 import ServerArray from "./ServerArray"
 import Profile from "./Profile"
 import useTouchScreen from "./../hooks"
@@ -10,14 +9,20 @@ function ServerPanel() {
 
     return (
         <>
-            <div className={`server-bar ${isTouch ? "mobile" : "desktop"}`}>
-                <div className="server panel">
-                    <DirectMessage/>
-                </div>
+            <div className={`server panel ${isTouch ? "mobile" : "desktop"}`}>
+                <DirectMessage/>
                 <ServerArray/>
-                <div className="server panel">
-                    <Profile/>
+                <div className="control mute">
+                    <button className="mic mute">
+                        <i className="bi bi-mic-mute icon mute"/>
+                    </button>
                 </div>
+                <div className="control mute">
+                    <button className="volume mute">
+                        <i className="bi bi-volume-mute icon mute"/>
+                    </button>
+                </div>
+                <Profile/>
             </div>
         </>
     )

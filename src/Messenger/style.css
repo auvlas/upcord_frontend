@@ -45,23 +45,6 @@ div.panel.main.vertical {
     gap: 4px;
 }
 
-div.panel.server {
-    gap: 4px;
-    border-radius: 0px 12px 12px 0px;
-}
-
-div.servers {
-    flex: 1;
-}
-
-div.panel.chat {
-    border-radius: 12px 0px 0px 12px;
-}
-
-div.panel.option {
-    border-radius: 0px;
-}
-
 div.panel.server,
 div.panel.chat,
 div.panel.option {
@@ -70,12 +53,42 @@ div.panel.option {
     width: 60px;
 }
 
-div.panel.server:focus-within,
-div.panel.server:hover,
-div.panel.chat:focus-within,
-div.panel.chat:hover,
-div.panel.option:focus-within,
-div.panel.option:hover {
+div.panel.server {
+    gap: 4px;
+    border-radius: 0px 12px 12px 0px;
+    margin-left: 0px;
+    min-width: 0px;
+    transition:
+        min-width 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1),
+        margin-left 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1),
+        border-radius 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1);
+}
+
+div.servers {
+    flex: 1;
+}
+
+div.panel.chat {
+    border-radius: 12px 0px 0px 12px;
+    min-width: 0px;
+    transition:
+        min-width 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1),
+        border-radius 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1);
+}
+
+div.panel.option {
+    border-radius: 0px;
+    margin-right: 0px;
+    min-width: 0px;
+    transition:
+        min-width 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1),
+        margin-right 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1),
+        border-radius 0.8s linear(0, 0.6 40%, 1 60%, 1.1 80%, 1);
+}
+
+div.panel:is(
+        .server, .chat, .option
+    ):is(:hover, :focus-within) {
     min-width: 160px;
     border-radius: 12px;
 }
@@ -120,11 +133,15 @@ button.sender:focus,
 button.mute:focus,
 button.profile:focus,
 button.direct-message:focus,
-textarea.sender:hover,
 button.sender:hover,
 button.mute:hover,
 button.profile:hover,
 button.direct-message:hover {
+    outline: none;
+    background-color: #ddbbff40;
+}
+
+textarea.sender:hover {
     outline: none;
     background-color: #ddbbff10;
 }
@@ -135,6 +152,7 @@ button.profile,
 button.direct-message {
     display: grid;
     background-color: transparent;
+    transition: background-color 0.6s ease-in-out;
     border-radius: 8px;
     border: none;
     padding: 0px;
@@ -173,6 +191,7 @@ textarea.sender {
     font-size: 25px;
     color: #ddbbff;
     background-color: #ddbbff08;
+    transition: background-color 0.6s ease-in-out;
     border: 4px solid transparent;
     padding: 0px;
     border-bottom: 43px solid transparent;
@@ -271,63 +290,111 @@ i.icon.sender {
 
     div.panel.option {
         width: clamp(110px, 110px + (100dvw - 658px) * (50 / 50), 160px);
-        border-top-right-radius: clamp(6px, 6px + (100dvw - 658px) * (6 / 50), 12px);
-        border-bottom-right-radius: clamp(6px, 6px + (100dvw - 658px) * (6 / 50), 12px);
+        border-top-left-radius: clamp(6px, 6px + (100dvw - 658px) * (6 / 50), 12px);
+        border-bottom-left-radius: clamp(6px, 6px + (100dvw - 658px) * (6 / 50), 12px);
     }
 }
 
 @media (min-width: 708px) {
     div.panel.option {
         width: 160px;
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+
+    div.panel:is(
+        .server, .chat, .option
+    ):is(:hover, :focus-within) {
+        min-width: 260px;
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
     div.panel.chat,
     div.panel.option {
-        width: clamp(160px, 160px + (100dvw - 900px) * (100 / 200), 260px);
+        width: clamp(160px, 160px + (100dvw - 1200px) * (100 / 200), 260px);
     }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1400px) {
     div.panel.chat,
     div.panel.option {
         width: 260px;
     }
 
+    div.panel:is(
+        .server, .chat, .option
+    ):is(:hover, :focus-within) {
+        min-width: 360px;
+    }
+
     div.panel.server {
-        width: clamp(60px, 60px + (100dvw - 1100px) * (200 / 200), 260px);
+        width: clamp(60px, 60px + (100dvw - 1400px) * (200 / 200), 260px);
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1600px) {
     div.panel.server {
         width: 260px;
-    }
-}
-
-@media (min-width: 1500px) {
-    div.panel.chat,
-    div.panel.option {
-        width: clamp(260px, 260px + (100dvw - 1500px) * (100 / 200), 360px);
-    }
-}
-
-@media (min-width: 1700px) {
-    div.panel.chat,
-    div.panel.option {
-        width: 360px;
-    }
-
-    div.panel.server {
-        width: clamp(260px, 260px + (100dvw - 1700px) * (100 / 100), 360px);
     }
 }
 
 @media (min-width: 1800px) {
+    div.panel.chat,
+    div.panel.option {
+        width: clamp(260px, 260px + (100dvw - 1800px) * (100 / 200), 360px);
+    }
+}
+
+@media (min-width: 2000px) {
+    div.panel.chat,
+    div.panel.option {
+        width: 360px;
+    }
+
+    div.panel:is(
+        .server, .chat, .option
+    ):is(:hover, :focus-within) {
+        min-width: 460px;
+    }
+
+    div.panel.server {
+        width: clamp(260px, 260px + (100dvw - 2000px) * (100 / 100), 360px);
+    }
+}
+
+@media (min-width: 2100px) {
     div.panel.server {
         width: 360px;
+    }
+
+    div.panel.chat,
+    div.panel.option {
+        width: clamp(360px, 360px + (100dvw - 2100px) * (100 / 200), 460px);
+    }
+}
+
+@media (min-width: 2300px) {
+    div.panel.chat,
+    div.panel.option {
+        width: 460px;
+    }
+
+    div.panel:is(
+        .server, .chat, .option
+    ):is(:hover, :focus-within) {
+        min-width: 560px;
+    }
+}
+
+@media (min-width: 2500px) {
+    div.panel.server {
+        width: clamp(360px, 360px + (100dvw - 2500px) * (100 / 200), 460px);
+    }
+}
+
+@media (min-width: 2700px) {
+    div.panel.server {
+        width: 460px;
     }
 }

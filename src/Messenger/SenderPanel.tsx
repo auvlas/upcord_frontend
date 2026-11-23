@@ -1,8 +1,13 @@
+import { useTranslation } from "react-i18next"
+
+
 function SenderPanel() {
+    const { t, i18n } = useTranslation()
+
     return (
         <>
             <div className="panel sender">
-                <textarea className="sender"/>
+                <textarea placeholder={t("placeholder_input")} className="sender"/>
                 <div className="sender buttons first">
                     <button className="sender add">
                         <i className="bi bi-file-earmark-plus sender icon"/>

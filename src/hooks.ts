@@ -1,20 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 type StateBoolean = [boolean, Dispatch<SetStateAction<boolean>>]
 type StateTouchScreen = StateBoolean
 
 function useTouchScreen(): boolean {
-    const [isTouch]: StateBoolean = useState<boolean>((): boolean => {
-        if (typeof window === 'undefined') return false
-        
-        const hasTouchStart: boolean = 'ontouchstart' in window
-        const hasTouchPoints: boolean = typeof navigator !== 'undefined' && 
-                typeof navigator.maxTouchPoints === 'number' && 
-                navigator.maxTouchPoints > 0
-            
-        return hasTouchStart || hasTouchPoints
-    })
+    const [isTouch, setIsTouch] = useState(false)
+
+    useEffect(() => {
+        const checkTouch = () => {
+            setIsTouch(
+                'ontouchstart' in window ||
+                navigator.maxTouchPoints > 0 ||
+                window.matchMedia('(pointer: coarse)').matches
+            )
+        }
+
+        checkTouch()
+    }, [])
 
     return isTouch
 }

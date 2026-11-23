@@ -110,7 +110,7 @@ div.panel.message {
     flex: 1;
 }
 
-div.control.mute {
+div.control.control {
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -118,25 +118,23 @@ div.control.mute {
 
 i.icon {
     line-height: 1;
-    color: #ddbbff;
 }
 
-i.icon.mute {
+i.icon.control {
     font-size: 19px;
+}
+
+i.icon.control.setting {
+    font-size: 34px;
 }
 
 i.icon.profile {
     font-size: 44px;
 }
 
-button.sender:focus,
-button.mute:focus,
-button.profile:focus,
-button.direct-message:focus,
-button.sender:hover,
-button.mute:hover,
-button.profile:hover,
-button.direct-message:hover {
+button:is(
+        .sender, .control, .profile, .direct-message
+    ):is(:focus, :hover) {
     outline: none;
     background-color: #ddbbff40;
 }
@@ -147,25 +145,48 @@ textarea.sender:hover {
 }
 
 button.sender,
-button.mute,
+button.control,
 button.profile,
 button.direct-message {
     display: grid;
     background-color: transparent;
-    transition: background-color 0.6s ease-in-out;
+    transition: background-color 0.6s ease-out;
     border-radius: 8px;
     border: none;
     padding: 0px;
     align-items: center;
-    justify-items: center;
+    color: #ddbbff;
+}
+
+button.control,
+button.profile,
+button.direct-message {
+    grid-template-columns: 52px auto;
+}
+
+button.profile,
+button.setting,
+button.direct-message {
+    width: 100%;
+    gap: 4px;
 }
 
 button.profile,
 button.direct-message {
-    width: 52px;
+    height: 52px;
 }
 
-i.icon.mute,
+button.setting {
+    height: 42px;
+}
+
+button.profile,
+button.setting,
+button.direct-message {
+    font-size: 20px;
+}
+
+i.icon.control,
 i.icon.profile,
 i.icon.sender,
 img.direct-message {
@@ -174,6 +195,11 @@ img.direct-message {
     box-sizing: border-box;
     border-radius: 4px;
     text-align: center;
+}
+
+i.icon.profile,
+img.direct-message {
+    width: 52px;
 }
 
 div.panel.sender {
@@ -211,6 +237,12 @@ textarea.sender {
     white-space: pre-wrap;
     overflow-x: hidden;
     outline: none;
+}
+
+textarea.sender::placeholder {
+    opacity: 1;
+    font-size: 18px;
+    color: #ddbbff88;
 }
 
 div.sender.buttons {

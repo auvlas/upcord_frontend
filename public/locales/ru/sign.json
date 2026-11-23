@@ -15,5 +15,9 @@
     "input_phone": "Введите телефон",
     "confirm": "Подтвердить",
     "en": "en",
-    "ru": "ru"
+    "ru": "ru",
+    "direct_message": "Личные сообщения",
+    "placeholder_input": "Вы можите напечатать сообщение",
+    "settings": "Настройки",
+    "your_profile": "Ваш профиль"
 }

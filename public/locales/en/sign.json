@@ -15,5 +15,9 @@
     "input_phone": "Input phone",
     "confirm": "Confirm",
     "en": "en",
-    "ru": "ru"
+    "ru": "ru",
+    "direct_message": "Direct message",
+    "placeholder_input": "Can you type your message",
+    "settings": "Settings",
+    "your_profile": "Your profile"
 }

@@ -19,5 +19,10 @@
     "direct_message": "Direct message",
     "placeholder_input": "Can you type your message",
     "settings": "Settings",
-    "your_profile": "Your profile"
+    "your_profile": "Your profile",
+    "server_name": "Server name",
+    "tab_member": "Members",
+    "tab_emoji": "Emoji",
+    "tab_sticker": "Stickers",
+    "tab_gif": "Gif's"
 }

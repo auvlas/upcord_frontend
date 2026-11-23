@@ -19,5 +19,10 @@
     "direct_message": "Личные сообщения",
     "placeholder_input": "Вы можите напечатать сообщение",
     "settings": "Настройки",
-    "your_profile": "Ваш профиль"
+    "your_profile": "Ваш профиль",
+    "server_name": "Имя сервера",
+    "tab_member": "Участники",
+    "tab_emoji": "Смайлики",
+    "tab_sticker": "Стикеры",
+    "tab_gif": "Гифки"
 }

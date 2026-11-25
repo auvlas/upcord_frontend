@@ -170,23 +170,50 @@ button:is(
 }
 
 div.header.option > button.header.option {
-    display: none;
+    display: grid;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    translate: 0 -52px;
+
+    transition:
+        opacity 0.8s ease,
+        translate 0.8s ease,
+        visibility 0.8s ease;
 }
 
 div.header.option {
     height: 52px;
-    transition: height 0.6s ease;
+    overflow: hidden;
+    transition: height 0.8s ease 0.4s;
 }
 
 div.header.option:hover,
-div.header.option:focus-within {
+div.header.option:has(:focus-visible) {
     height: 220px;
+    transition: height 0.8s ease;
 }
 
 div.header.option > button.header.option.active,
 div.header.option:hover > button.header.option,
-div.header.option:focus-within > button.header.option {
-    display: grid;
+div.header.option:has(:focus-visible) > button.header.option {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    translate: 0 0;
+
+    transition:
+        opacity 0.8s ease 0.4s,
+        translate 0.8s ease 0.4s,
+        visibility 0.8s ease 0.4s;
+}
+
+@starting-style {
+    div.header.option:hover > button.header.option,
+    div.header.option:has(:focus-visible) > button.header.option {
+        opacity: 0;
+        translate: 0 -52px;
+    }
 }
 
 div.header {

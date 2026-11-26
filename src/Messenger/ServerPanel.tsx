@@ -1,8 +1,8 @@
-import DirectMessage from "./DirectMessage"
-import ServerArray from "./ServerArray"
-import Profile from "./Profile"
+import DirectMessage from "#src/Messenger/DirectMessage"
+import ServerArray from "#src/Messenger/ServerArray"
+import Profile from "#src/Messenger/Profile"
 import { useTranslation } from "react-i18next"
-import useTouchScreen from "./../hooks"
+import useTouchScreen from "#src/hooks"
 
 
 function ServerPanel() {

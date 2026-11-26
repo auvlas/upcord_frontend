@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
-import useTouchScreen from "./hooks"
+import useTouchScreen from "#src/hooks"
 import Cookies from "js-cookie"
-import Messenger from "./Messenger/Messenger"
-import Authorization from "./Authorization/Authorization"
-import SignIn from "./Authorization/Sign/SignIn.tsx"
-import SignUp from "./Authorization/Sign/SignUp.tsx"
-import type SignForm from "./Authorization/types"
+import Messenger from "#src/Messenger/Messenger"
+import Authorization from "#src/Authorization/Authorization"
+import SignIn from "#src/Authorization/Sign/SignIn.tsx"
+import SignUp from "#src/Authorization/Sign/SignUp.tsx"
+import type SignForm from "#src/Authorization/types"
 
 
 function App() {

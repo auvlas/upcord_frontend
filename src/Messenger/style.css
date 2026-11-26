@@ -169,6 +169,10 @@ button:is(
     gap: 4px;
 }
 
+button.header.message {
+    margin-top: 4px;
+}
+
 div.header.option > button.header.option {
     display: grid;
     visibility: hidden;
@@ -206,6 +210,10 @@ div.header.option:has(:focus-visible) > button.header.option {
         opacity 0.8s ease 0.4s,
         translate 0.8s ease 0.4s,
         visibility 0.8s ease 0.4s;
+}
+
+div.header.option > button.header.option.active {
+    z-index: 1;
 }
 
 @starting-style {

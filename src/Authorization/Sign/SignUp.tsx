@@ -1,9 +1,9 @@
 import { useEffect, useState, JSX } from "react"
-import type { StateField, InputEvent } from "./types"
-import selected from "./../selected"
+import type { StateField, InputEvent } from "#src/Authorization/Sign/types"
+import selected from "#src/Authorization/selected"
 import { useTranslation } from "react-i18next"
 
-import "./style.css"
+import "#src/Authorization/Sign/style.css"
 
 
 export default function SignUp({ ok }: { ok: () => void }): JSX.Element {

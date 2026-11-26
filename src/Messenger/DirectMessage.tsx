@@ -7,7 +7,7 @@ function DirectMessage() {
     return (
         <>
             <button className="direct-message">
-                <img className="direct-message" src="./../../public/upcord1.svg"/>
+                <img className="direct-message" src="/favicon.svg"/>
                 {t("direct_message")}
             </button>
         </>

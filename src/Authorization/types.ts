@@ -1,5 +1,5 @@
-import SignIn from "./Sign/SignIn"
-import SignUp from "./Sign/SignUp"
+import SignIn from "#src/Authorization/Sign/SignIn"
+import SignUp from "#src/Authorization/Sign/SignUp"
 
 
 export type SignForm = typeof SignIn | typeof SignUp

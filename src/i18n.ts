@@ -1,9 +1,9 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import LanguageDetector from 'i18next-browser-languagedetector'
+import i18n from "i18next"
+import { initReactI18next } from "react-i18next"
+import LanguageDetector from "i18next-browser-languagedetector"
 
-import translationRU from './../public/locales/ru/sign.json'
-import translationEN from './../public/locales/en/sign.json'
+import translationRU from "#locales/ru/sign.json"
+import translationEN from "#locales/en/sign.json"
 
 
 const resources = {

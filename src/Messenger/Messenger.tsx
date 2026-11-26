@@ -1,12 +1,12 @@
 import { useEffect } from "react"
-import ServerPanel from "./ServerPanel"
-import ChatPanel from "./ChatPanel"
-import MessagePanel from "./MessagePanel"
-import OptionPanel from "./OptionPanel"
-import SenderPanel from "./SenderPanel"
-import useTouchScreen from "./../hooks"
+import ServerPanel from "#src/Messenger/ServerPanel"
+import ChatPanel from "#src/Messenger/ChatPanel"
+import MessagePanel from "#src/Messenger/MessagePanel"
+import OptionPanel from "#src/Messenger/OptionPanel"
+import SenderPanel from "#src/Messenger/SenderPanel"
+import useTouchScreen from "#src/hooks"
 
-import "./style.css"
+import "#src/Messenger/style.css"
 
 
 function Messenger() {

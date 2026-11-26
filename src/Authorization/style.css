@@ -2,7 +2,7 @@ body.authorization {
     display: flex;
     flex-direction: column;
     background-color: black;
-    background-image: url("./../assets/landspace6.png");
+    background-image: url("/landspace6.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

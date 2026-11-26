@@ -1,16 +1,16 @@
 import Cookies from "js-cookie"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import App from "./App"
-import i18n from "./i18n"
+import App from "#src/App"
+import i18n from "#src/i18n"
 
 import "bootstrap-icons/font/bootstrap-icons.css"
-import "./main.css"
+import "#src/main.css"
 
 
 Cookies.remove("jwt_token")
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.body!).render(
     <StrictMode>
         <App />
     </StrictMode>

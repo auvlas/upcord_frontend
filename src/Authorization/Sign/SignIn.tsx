@@ -1,9 +1,9 @@
 import { useEffect, useState, JSX } from "react"
-import type { StateField, InputEvent } from "./types"
-import selected from "./../selected"
+import type { StateField, InputEvent } from "#src/Authorization/Sign/types"
+import selected from "#src/Authorization/selected"
 import { useTranslation } from "react-i18next"
 
-import "./style.css"
+import "#src/Authorization/Sign/style.css"
 
 
 export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
@@ -34,7 +34,7 @@ export default function SignIn({ ok }: { ok: () => void }): JSX.Element {
                     >
                         <img
                             className="sign logo signin"
-                            src="/upcord1.svg"
+                            src="/favicon.svg"
                         />
 
                         <h1 className="sign logo signin">

@@ -2,15 +2,15 @@ import {
     Dispatch, SetStateAction, useState,
     useEffect, JSX
 } from "react"
-import SignIn from "./Sign/SignIn"
-import SignUp from "./Sign/SignUp"
+import SignIn from "#src/Authorization/Sign/SignIn"
+import SignUp from "#src/Authorization/Sign/SignUp"
 import type {
     SignForm, StateSingForm
-} from "./types"
-import selected from "./selected"
+} from "#src/Authorization/types"
+import selected from "#src/Authorization/selected"
 import { useTranslation } from "react-i18next"
 
-import "./style.css"
+import "#src/Authorization/style.css"
 
 
 export default Authorization

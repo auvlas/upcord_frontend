@@ -22,4 +22,26 @@ function useTouchScreen(): boolean {
     return isTouch
 }
 
-export default useTouchScreen
+function useHash(): string {
+    const [hash, setHash] = useState<string>(() => 
+        typeof location !== 'undefined' ? location.hash.slice(1) : ''
+    )
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            setHash(location.hash.slice(1))
+        }
+
+        window.addEventListener('hashchange', handleHashChange)
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange)
+        }
+    }, [])
+
+    return hash
+}
+
+export {
+        useTouchScreen,
+        useHash
+}

@@ -4,7 +4,7 @@ import ChatPanel from "#src/Messenger/ChatPanel"
 import MessagePanel from "#src/Messenger/MessagePanel"
 import OptionPanel from "#src/Messenger/OptionPanel"
 import SenderPanel from "#src/Messenger/SenderPanel"
-import useTouchScreen from "#src/hooks"
+import { useTouchScreen } from "#src/hooks"
 
 import "#src/Messenger/style.css"
 
